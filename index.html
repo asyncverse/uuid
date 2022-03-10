@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Generate UUID</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+</head>
+
+<body>
+
+    <div style="margin-right: 1em;">
+        <input style="width: 50vh; text-align: center;" type="text" id="uuid" value="">
+    </div>
+    <div>
+        <button onclick="generateUUID()" type="button" class="btn btn-primary" id="generate">Generate UUID</button>
+    </div>
+
+    <script>
+        function generateUUID() {
+            var d = new Date().getTime();
+            var uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+                var r = (d + Math.random() * 16) % 16 | 0;
+                d = Math.floor(d / 16);
+                return (c == 'x' ? r : (r & 0x3 | 0x8)).toString(16);
+            });
+            // update input field with uuid text
+            $('#uuid').val(uuid);
+            copyTxtToClipboard(uuid);
+        }
+        function copyTxtToClipboard() {
+            var text = document.getElementById('uuid').select();
+            document.execCommand('copy');
+        }
+    </script>
+
+</body>
+
+</html>
