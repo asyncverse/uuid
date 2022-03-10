@@ -3,5 +3,25 @@ body {
     height: 100vh;
     display: flex;
     justify-content: center;
-    align-items: center
+    align-items: center;
+    flex-wrap: wrap;
+}
+.divider {
+    width: 100%;
+    /* height: 1px; */
+    background-color: #fff;
+    /* margin-top: 10px; */
+    /* margin-bottom: 10px; */
+}
+input {
+    width: 100%;
+    height: 36px;
+    border-radius: 5px;
+    border: 1px solid #fff;
+    padding-left: 10px;
+    font-size: 20px;
+    /* color: #fff; */
+    background-color: #fff;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }

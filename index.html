@@ -12,15 +12,14 @@
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 </head>
 
-<body>
-
-    <div style="margin-right: 1em;">
-        <input style="width: 50vh; text-align: center;" type="text" id="uuid" value="">
-    </div>
+<body style="text-align: center;">
     <div>
+        <input style="width: 50vh; text-align: center;" type="text" id="uuid" value="">
         <button onclick="generateUUID()" type="button" class="btn btn-primary" id="generate">Generate UUID</button>
-    </div>
+        <p class="divider"></p>
+        <p>(The Text is automatically copied to the Clipboard)</p>
 
+    </div>
     <script>
         function generateUUID() {
             var d = new Date().getTime();
